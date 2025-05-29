@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - Pricing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { background: #181c24; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .pricing-section { display: flex; flex-direction: column; align-items: center; margin: 3rem 0; }
+        .plan-cards { display: flex; gap: 2rem; margin: 2rem 0; }
+        .plan { background: #23283a; border-radius: 16px; box-shadow: 0 2px 12px #00ffe733; padding: 2rem; width: 300px; text-align: center; border: 2px solid #00ffe7; }
+        .plan-title { font-size: 1.5rem; color: #00ffe7; margin-bottom: 0.5rem; }
+        .plan-price { font-size: 2.2rem; color: #fff; margin-bottom: 1rem; }
+        .plan-features { color: #b0f7f3; margin-bottom: 1rem; }
+        .plan button { background: #00ffe7; color: #181c24; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .plan button:hover { background: #00bfae; }
+        .toggle { margin: 1rem 0; }
+        .toggle label { color: #b0f7f3; margin: 0 1rem; }
+        .comparison { background: #23283a; border-radius: 12px; padding: 2rem; margin: 2rem 0; color: #b0f7f3; }
+        .sticky-cta { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: #00ffe7; color: #181c24; border-radius: 8px; padding: 1rem 2.5rem; font-size: 1.3rem; font-weight: bold; box-shadow: 0 2px 12px #00ffe755; cursor: pointer; z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="pricing-section">
+        <h1>Pricing</h1>
+        <div class="toggle">
+            <label><input type="radio" name="billing" checked> Monthly</label>
+            <label><input type="radio" name="billing"> Yearly <span style="color:#00ffe7;">(Save 20%)</span></label>
+        </div>
+        <div class="plan-cards">
+            <div class="plan">
+                <div class="plan-title">Free Trial</div>
+                <div class="plan-price">$0</div>
+                <div class="plan-features">Limited features<br>Try all tools<br>Community support</div>
+                <button>Start Free</button>
+            </div>
+            <div class="plan">
+                <div class="plan-title">Creator Plan</div>
+                <div class="plan-price">$19/mo</div>
+                <div class="plan-features">All tools<br>Priority support<br>Monetization</div>
+                <button>Start Free</button>
+            </div>
+            <div class="plan">
+                <div class="plan-title">Pro Domination</div>
+                <div class="plan-price">$49/mo</div>
+                <div class="plan-features">Everything in Creator<br>Advanced analytics<br>Affiliate dashboard</div>
+                <button>Start Free</button>
+            </div>
+            <div class="plan">
+                <div class="plan-title">Lifetime Beast Mode</div>
+                <div class="plan-price">$299</div>
+                <div class="plan-features">Lifetime access<br>All features<br>VIP support</div>
+                <button>Start Free</button>
+            </div>
+        </div>
+        <div class="comparison">
+            <h2>Compare Plans</h2>
+            <ul>
+                <li>All AI tools included</li>
+                <li>Monetization options</li>
+                <li>Affiliate program</li>
+                <li>Priority support (Creator+)</li>
+                <li>Advanced analytics (Pro+)</li>
+            </ul>
+        </div>
+    </div>
+    <button class="sticky-cta">Start Free</button>
+</body>
+</html>

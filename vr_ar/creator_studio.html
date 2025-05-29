@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - Creator Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { background: #181c24; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .studio-container { max-width: 1200px; margin: 3rem auto; background: #23283a; border-radius: 16px; box-shadow: 0 2px 12px #00ffe733; padding: 2rem; display: flex; }
+        .sidebar { width: 220px; background: #10131a; border-radius: 12px; padding: 1.5rem; margin-right: 2rem; color: #00ffe7; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 1.2rem; cursor: pointer; }
+        .sidebar li:hover { text-decoration: underline; }
+        .main-work { flex: 1; background: #181c24; border-radius: 12px; padding: 2rem; }
+        .tabs { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .tab { background: #23283a; color: #00ffe7; border-radius: 8px 8px 0 0; padding: 0.7rem 1.5rem; cursor: pointer; font-weight: bold; }
+        .tab.active { background: #00ffe7; color: #181c24; }
+        .timeline-editor { background: #10131a; border-radius: 8px; padding: 1rem; margin: 1rem 0; color: #00ffe7; }
+        .output-preview { background: #10131a; border-radius: 8px; padding: 1rem; margin: 1rem 0; color: #fff; }
+        .right-panel { width: 300px; background: #10131a; border-radius: 12px; padding: 1.5rem; margin-left: 2rem; color: #00ffe7; }
+        .assist-chat { background: #23283a; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        .tips { color: #b0f7f3; }
+    </style>
+    <script>
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+            document.getElementById(tab + '-tab').classList.add('active');
+            document.getElementById(tab + '-content').style.display = 'block';
+        }
+        window.onload = function() { showTab('audio'); };
+    </script>
+</head>
+<body>
+    <div class="studio-container">
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>My Projects</li>
+                <li>Create New</li>
+                <li>Earnings</li>
+                <li>Analytics</li>
+                <li>Support</li>
+            </ul>
+        </div>
+        <div class="main-work">
+            <div class="tabs">
+                <div class="tab" id="audio-tab" onclick="showTab('audio')">Audio</div>
+                <div class="tab" id="video-tab" onclick="showTab('video')">Video</div>
+                <div class="tab" id="script-tab" onclick="showTab('script')">Script</div>
+                <div class="tab" id="voice-tab" onclick="showTab('voice')">Voice</div>
+            </div>
+            <div class="tab-content" id="audio-content">
+                <h2>AI Prompt Input (Audio)</h2>
+                <input type="text" placeholder="Describe your audio..." style="width:100%;padding:0.5rem;">
+                <div class="timeline-editor">Timeline Editor (Audio)</div>
+                <div class="output-preview">Output Preview Box</div>
+                <button>Save</button> <button>Export</button> <button>Publish</button>
+            </div>
+            <div class="tab-content" id="video-content" style="display:none;">
+                <h2>AI Prompt Input (Video)</h2>
+                <input type="text" placeholder="Describe your video..." style="width:100%;padding:0.5rem;">
+                <div class="timeline-editor">Timeline Editor (Video)</div>
+                <div class="output-preview">Output Preview Box</div>
+                <button>Save</button> <button>Export</button> <button>Publish</button>
+            </div>
+            <div class="tab-content" id="script-content" style="display:none;">
+                <h2>AI Prompt Input (Script)</h2>
+                <input type="text" placeholder="Describe your script..." style="width:100%;padding:0.5rem;">
+                <div class="timeline-editor">Timeline Editor (Script)</div>
+                <div class="output-preview">Output Preview Box</div>
+                <button>Save</button> <button>Export</button> <button>Publish</button>
+            </div>
+            <div class="tab-content" id="voice-content" style="display:none;">
+                <h2>AI Prompt Input (Voice)</h2>
+                <input type="text" placeholder="Describe your voice..." style="width:100%;padding:0.5rem;">
+                <div class="timeline-editor">Timeline Editor (Voice)</div>
+                <div class="output-preview">Output Preview Box</div>
+                <button>Save</button> <button>Export</button> <button>Publish</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="assist-chat">AI Copilot Chatbot: How can I help?</div>
+            <div class="tips">Tips, suggestions, and viral sharing tools here.</div>
+        </div>
+    </div>
+</body>
+</html>

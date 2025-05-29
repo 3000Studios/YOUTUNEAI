@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - Blog / AI School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { background: #181c24; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .blog-hero { background: #23283a; padding: 2rem 0; text-align: center; }
+        .blog-hero h1 { color: #00ffe7; margin-bottom: 1rem; }
+        .blog-search { margin: 1rem 0; }
+        .blog-search input { padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #00ffe7; width: 300px; }
+        .categories { margin: 1rem 0; }
+        .categories button { background: #00ffe7; color: #181c24; border: none; padding: 0.5rem 1.5rem; border-radius: 6px; cursor: pointer; margin: 0 0.5rem; }
+        .categories button:hover { background: #00bfae; }
+        .blog-feed { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0; }
+        .blog-card { background: #23283a; border-radius: 12px; box-shadow: 0 2px 12px #00ffe733; padding: 1.5rem; width: 340px; }
+        .blog-card h3 { color: #00ffe7; }
+        .blog-card .tags { margin-top: 0.5rem; }
+        .blog-card .tag { background: #00ffe7; color: #181c24; border-radius: 4px; padding: 0.2rem 0.7rem; margin-right: 0.5rem; font-size: 0.9rem; }
+        .pagination { text-align: center; margin: 2rem 0; }
+        .pagination button { background: #23283a; color: #00ffe7; border: 1px solid #00ffe7; border-radius: 6px; padding: 0.5rem 1.2rem; margin: 0 0.3rem; cursor: pointer; }
+        .pagination button.active, .pagination button:hover { background: #00ffe7; color: #181c24; }
+    </style>
+</head>
+<body>
+    <div class="blog-hero">
+        <h1>AI School & Blog</h1>
+        <div class="blog-search">
+            <input type="text" placeholder="Search tutorials, news, updates...">
+        </div>
+        <div class="categories">
+            <button>Tutorials</button>
+            <button>Case Studies</button>
+            <button>News</button>
+            <button>Updates</button>
+        </div>
+    </div>
+    <div class="blog-feed">
+        <div class="blog-card">
+            <h3>How to Make Viral AI Videos</h3>
+            <div>Learn the secrets to creating content that spreads fast.</div>
+            <div class="tags"><span class="tag">Tutorial</span><span class="tag">Trending</span></div>
+        </div>
+        <div class="blog-card">
+            <h3>Case Study: Monetizing with YouTuneAI</h3>
+            <div>See how creators are earning with our platform.</div>
+            <div class="tags"><span class="tag">Case Study</span><span class="tag">Monetization</span></div>
+        </div>
+        <div class="blog-card">
+            <h3>AI Audio Lab: Behind the Scenes</h3>
+            <div>Discover the tech powering our AutoTune tools.</div>
+            <div class="tags"><span class="tag">News</span></div>
+        </div>
+    </div>
+    <div class="pagination">
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>Next</button>
+    </div>
+</body>
+</html>

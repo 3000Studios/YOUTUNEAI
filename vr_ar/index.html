@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #181c24; color: #fff; margin: 0; }
+        .video-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; }
+        .audio-sticky { position: fixed; top: 1rem; right: 1rem; z-index: 10; background: #23283aee; border-radius: 2rem; padding: 0.5rem 1rem; display: flex; align-items: center; box-shadow: 0 2px 12px #0005; }
+        .audio-sticky audio { margin-right: 0.5rem; }
+        header { background: none; padding: 4rem 0 2rem 0; text-align: center; }
+        h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; font-weight: bold; text-shadow: 0 2px 24px #00ffe7aa; }
+        h2 { color: #00ffe7; margin-top: 0.5rem; font-size: 2rem; }
+        .cta { margin: 2rem 0; text-align: center; }
+        .cta button { background: #00ffe7; color: #181c24; border: none; padding: 1rem 2.5rem; font-size: 1.3rem; border-radius: 8px; cursor: pointer; margin: 0 1rem; font-weight: bold; box-shadow: 0 2px 12px #00ffe755; transition: background 0.2s; }
+        .cta button:hover { background: #00bfae; }
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin: 3rem 0; }
+        .feature { background: #23283a; border-radius: 12px; padding: 2rem; width: 320px; box-shadow: 0 2px 12px #0002; text-align: center; }
+        .feature h3 { color: #00ffe7; font-size: 1.5rem; }
+        .feature i { font-size: 2.5rem; margin-bottom: 1rem; color: #00ffe7; }
+        .carousel { margin: 3rem auto; max-width: 900px; background: #23283a; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px #0002; }
+        .carousel-slide { display: flex; align-items: center; justify-content: space-between; }
+        .carousel-content { flex: 1; }
+        .carousel-img { width: 180px; height: 120px; background: #10131a; border-radius: 8px; margin-right: 2rem; object-fit: cover; }
+        .remix-btn { background: #00ffe7; color: #181c24; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-left: 2rem; }
+        .remix-btn:hover { background: #00bfae; }
+        .why-section { display: flex; justify-content: center; gap: 2rem; margin: 3rem 0; }
+        .why-card { background: #23283a; border-radius: 12px; padding: 2rem; width: 200px; text-align: center; box-shadow: 0 2px 12px #0002; }
+        .why-card i { font-size: 2rem; color: #00ffe7; margin-bottom: 0.5rem; }
+        .testimonials { background: #23283a; border-radius: 12px; margin: 3rem auto; max-width: 900px; padding: 2rem; box-shadow: 0 2px 12px #0002; }
+        .testimonial { display: flex; align-items: center; margin-bottom: 2rem; }
+        .testimonial:last-child { margin-bottom: 0; }
+        .avatar { width: 64px; height: 64px; border-radius: 50%; background: #10131a; margin-right: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #00ffe7; }
+        .testimonial-content { flex: 1; }
+        .testimonial-voice { font-style: italic; color: #00ffe7; }
+        footer { text-align: center; color: #888; padding: 2rem 0; background: linear-gradient(90deg, #10131a 0%, #23283a 100%); border-top: 2px solid #00ffe7; margin-top: 4rem; }
+        .footer-socials a { color: #00ffe7; margin: 0 0.5rem; font-size: 1.5rem; }
+        .newsletter { margin: 2rem 0; }
+        .newsletter input { padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #00ffe7; width: 250px; }
+        .newsletter button { background: #00ffe7; color: #181c24; border: none; padding: 0.5rem 1.5rem; border-radius: 6px; cursor: pointer; margin-left: 1rem; }
+        .newsletter button:hover { background: #00bfae; }
+        .neon-glow { box-shadow: 0 0 24px #00ffe7cc, 0 0 8px #00ffe7cc; }
+        .navbar { display: flex; align-items: center; justify-content: space-between; background: rgba(24,28,36,0.95); padding: 0.5rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 24px #00ffe733; }
+        .nav-logo img { height: 48px; }
+        .nav-links { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
+        .nav-links li { display: inline; }
+        .nav-links a { color: #00ffe7; text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 0.5rem 1rem; border-radius: 6px; transition: background 0.2s, color 0.2s; }
+        .nav-links a:hover, .nav-links .live-link { background: #00ffe7; color: #181c24; }
+        .nav-video video { height: 48px; border-radius: 8px; box-shadow: 0 0 12px #00ffe7aa; }
+        @media (max-width: 900px) { .navbar { flex-direction: column; align-items: flex-start; } .nav-links { flex-wrap: wrap; gap: 0.5rem; } .nav-video { margin-top: 0.5rem; } }
+    </style>
+</head>
+<body>
+    <video class="video-bg" src="/wp-content/uploads/2025/04/20250331_0227_AI-Aquarium-Magic_simple_compose_01jqne3qfmf36t95k3njehst9x-1.mp4" autoplay loop muted playsinline></video>
+    <div class="audio-sticky neon-glow">
+        <audio src="/wp-content/uploads/2025/04/ai-hiphop-theme.mp3" autoplay loop></audio>
+        <span>🎧 Ambient Beat</span>
+    </div>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="/wp-content/uploads/2025/04/youtuneai-logo.png" alt="YouTuneAI Logo" style="height:48px;vertical-align:middle;">
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/features_tools.html">Features</a></li>
+            <li><a href="/how_it_works.html">How It Works</a></li>
+            <li><a href="/creator_studio.html">Creator Studio</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/store.html">Store</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/support.html">Support</a></li>
+            <li><a href="/affiliate.html">Affiliate</a></li>
+            <li><a href="/live.html" class="live-link">Live</a></li>
+        </ul>
+        <div class="nav-video">
+            <video src="/wp-content/uploads/2025/04/nav-loop.mp4" autoplay loop muted playsinline style="height:48px;border-radius:8px;"></video>
+        </div>
+    </nav>
+    <header>
+        <h1>Create. Dominate. Monetize with AI.</h1>
+        <h2>Unleash the Power of YouTuneAI</h2>
+        <div class="cta">
+            <button>Try Free Now</button>
+            <button>Watch Demo</button>
+        </div>
+    </header>
+    <section class="features">
+        <div class="feature neon-glow">
+            <i class="fas fa-video"></i>
+            <h3>AI Video Generator</h3>
+            <p>Turn your ideas into stunning videos with a single prompt.</p>
+        </div>
+        <div class="feature neon-glow">
+            <i class="fas fa-music"></i>
+            <h3>AutoTune Audio Lab</h3>
+            <p>Remix, tune, and create unique audio tracks instantly.</p>
+        </div>
+        <div class="feature neon-glow">
+            <i class="fas fa-robot"></i>
+            <h3>Voice Cloning + Lip Sync</h3>
+            <p>Clone voices and sync lips for next-level content.</p>
+        </div>
+    </section>
+    <div class="carousel">
+        <div class="carousel-slide">
+            <img class="carousel-img" src="/wp-content/uploads/2025/04/sample1.jpg" alt="User Creation 1">
+            <div class="carousel-content">
+                <h4>User Creation: Celebrity Deepfake</h4>
+                <p>See how creators remix and innovate with YouTuneAI tools.</p>
+            </div>
+            <button class="remix-btn">Remix This</button>
+        </div>
+        <div class="carousel-slide">
+            <img class="carousel-img" src="/wp-content/uploads/2025/04/sample2.jpg" alt="User Creation 2">
+            <div class="carousel-content">
+                <h4>User Creation: Viral Music Video</h4>
+                <p>AutoTune and AI video magic in action.</p>
+            </div>
+            <button class="remix-btn">Remix This</button>
+        </div>
+    </div>
+    <section class="why-section">
+        <div class="why-card neon-glow">
+            <i class="fas fa-bolt"></i>
+            <div>Fast AF</div>
+        </div>
+        <div class="why-card neon-glow">
+            <i class="fas fa-magic"></i>
+            <div>No Skill Needed</div>
+        </div>
+        <div class="why-card neon-glow">
+            <i class="fas fa-dollar-sign"></i>
+            <div>Monetization-Ready</div>
+        </div>
+        <div class="why-card neon-glow">
+            <i class="fas fa-crown"></i>
+            <div>Creator-Owned IP</div>
+        </div>
+    </section>
+    <div class="testimonials">
+        <div class="testimonial">
+            <div class="avatar neon-glow"><i class="fas fa-user-astronaut"></i></div>
+            <div class="testimonial-content">
+                <div class="testimonial-voice">“I made my first viral video in minutes. The AI Copilot is next level!”</div>
+                <div>- @creatorqueen</div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="avatar neon-glow"><i class="fas fa-user-ninja"></i></div>
+            <div class="testimonial-content">
+                <div class="testimonial-voice">“Monetizing my content was never this easy. Love the neon vibe!”</div>
+                <div>- @hustleking</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="newsletter">
+            <input type="email" placeholder="Sign up for updates">
+            <button>Subscribe</button>
+        </div>
+        <div style="margin-top:1rem;">&copy; 2025 YOUTUNEAI. All rights reserved.</div>
+    </footer>
+    <!-- --- Features/Tools Page ---
+    features_tools.html
+    --- How It Works Page ---
+    how_it_works.html
+    --- Creator Studio Page ---
+    creator_studio.html
+    --- Pricing Page ---
+    pricing.html
+    --- Blog/AI School Page ---
+    blog.html
+    --- Store Page ---
+    store.html
+    --- My Account Page ---
+    account.html
+    --- Support Page ---
+    support.html
+    --- Affiliate Hub Page ---
+    affiliate.html
+    --- Admin Backend Page ---
+    admin.html
+    -->
+</body>
+</html>

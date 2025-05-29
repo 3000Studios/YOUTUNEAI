@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - Features & Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { background: #181c24; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .tools-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 3rem 0; }
+        .tool-tile { background: #23283a; border-radius: 16px; box-shadow: 0 2px 12px #00ffe733; padding: 2rem; width: 320px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: 2px solid #00ffe7; }
+        .tool-tile:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 4px 32px #00ffe7cc; }
+        .tool-tile i { font-size: 2.5rem; color: #00ffe7; margin-bottom: 1rem; }
+        .tool-title { font-size: 1.4rem; color: #00ffe7; margin-bottom: 0.5rem; }
+        .tool-desc { color: #b0f7f3; margin-bottom: 1rem; }
+        .tool-actions button { background: #00ffe7; color: #181c24; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; margin: 0 0.5rem; font-weight: bold; }
+        .tool-actions button:hover { background: #00bfae; }
+        .sidebar { position: fixed; left: 0; top: 0; width: 220px; height: 100vh; background: #23283a; padding: 2rem 1rem; box-shadow: 2px 0 12px #00ffe722; }
+        .sidebar h3 { color: #00ffe7; margin-bottom: 1rem; }
+        .sidebar label { display: block; margin-bottom: 1rem; color: #b0f7f3; }
+        .main-content { margin-left: 240px; }
+        @media (max-width: 900px) { .sidebar { position: static; width: 100%; height: auto; box-shadow: none; } .main-content { margin-left: 0; } }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Filter Tools</h3>
+        <label><input type="checkbox" checked> Audio</label>
+        <label><input type="checkbox" checked> Video</label>
+        <label><input type="checkbox" checked> Image</label>
+        <label><input type="checkbox"> Trending</label>
+        <label><input type="checkbox"> Free</label>
+        <label><input type="checkbox"> Premium</label>
+    </div>
+    <div class="main-content">
+        <h1 style="text-align:center; margin-top:2rem;">Features & Tools</h1>
+        <div class="tools-grid">
+            <div class="tool-tile">
+                <i class="fas fa-video"></i>
+                <div class="tool-title">AI Video Generator</div>
+                <div class="tool-desc">Turn prompts into videos instantly.</div>
+                <div class="tool-actions">
+                    <button>Use Now</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+            <div class="tool-tile">
+                <i class="fas fa-music"></i>
+                <div class="tool-title">Audio AutoTuner</div>
+                <div class="tool-desc">Remix and tune your audio tracks.</div>
+                <div class="tool-actions">
+                    <button>Use Now</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+            <div class="tool-tile">
+                <i class="fas fa-user-secret"></i>
+                <div class="tool-title">Face Swap Master</div>
+                <div class="tool-desc">Swap faces in images and videos.</div>
+                <div class="tool-actions">
+                    <button>Use Now</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+            <div class="tool-tile">
+                <i class="fas fa-robot"></i>
+                <div class="tool-title">Voice Clone Theater</div>
+                <div class="tool-desc">Clone voices and create lip sync videos.</div>
+                <div class="tool-actions">
+                    <button>Use Now</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+            <div class="tool-tile">
+                <i class="fas fa-film"></i>
+                <div class="tool-title">Script-to-Scene Engine</div>
+                <div class="tool-desc">Turn scripts into video scenes automatically.</div>
+                <div class="tool-actions">
+                    <button>Use Now</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

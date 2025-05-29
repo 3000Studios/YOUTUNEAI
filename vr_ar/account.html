@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUNEAI - My Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { background: #181c24; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        .account-container { max-width: 900px; margin: 3rem auto; background: #23283a; border-radius: 16px; box-shadow: 0 2px 12px #00ffe733; padding: 2rem; }
+        .tabs { display: flex; gap: 2rem; margin-bottom: 2rem; }
+        .tab { background: #10131a; color: #00ffe7; border-radius: 8px 8px 0 0; padding: 1rem 2rem; cursor: pointer; font-weight: bold; }
+        .tab.active { background: #00ffe7; color: #181c24; }
+        .tab-content { background: #181c24; border-radius: 0 0 8px 8px; padding: 2rem; }
+        .analytics-feed { background: #10131a; border-radius: 8px; padding: 1rem; margin-top: 1rem; color: #00ffe7; }
+    </style>
+    <script>
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+            document.getElementById(tab + '-tab').classList.add('active');
+            document.getElementById(tab + '-content').style.display = 'block';
+        }
+        window.onload = function() { showTab('profile'); };
+    </script>
+</head>
+<body>
+    <div class="account-container">
+        <div class="tabs">
+            <div class="tab" id="profile-tab" onclick="showTab('profile')">Profile Info</div>
+            <div class="tab" id="billing-tab" onclick="showTab('billing')">Billing / Subscription</div>
+            <div class="tab" id="projects-tab" onclick="showTab('projects')">Saved Projects</div>
+            <div class="tab" id="affiliate-tab" onclick="showTab('affiliate')">Affiliate Dashboard</div>
+            <div class="tab" id="support-tab" onclick="showTab('support')">Support Tickets</div>
+        </div>
+        <div class="tab-content" id="profile-content">
+            <h2>Profile Info</h2>
+            <p>Name: <b>Creator</b></p>
+            <p>Email: <b>user@youtuneai.com</b></p>
+        </div>
+        <div class="tab-content" id="billing-content" style="display:none;">
+            <h2>Billing / Subscription</h2>
+            <p>Plan: <b>Creator Plan</b></p>
+            <p>Renewal: <b>2025-12-31</b></p>
+        </div>
+        <div class="tab-content" id="projects-content" style="display:none;">
+            <h2>Saved Projects</h2>
+            <ul><li>Viral AI Video #1</li><li>Remix Audio Pack</li></ul>
+        </div>
+        <div class="tab-content" id="affiliate-content" style="display:none;">
+            <h2>Affiliate Dashboard</h2>
+            <p>Monthly Earnings: <b>$1,200</b></p>
+            <p>Referrals: <b>34</b></p>
+        </div>
+        <div class="tab-content" id="support-content" style="display:none;">
+            <h2>Support Tickets</h2>
+            <ul><li>How do I use Voice Clone?</li><li>Billing question</li></ul>
+        </div>
+        <div class="analytics-feed">
+            <b>Realtime Analytics:</b> 1,234 downloads | 2,345 AI credits used | $2,000 earnings this month
+        </div>
+    </div>
+</body>
+</html>
