@@ -1,0 +1,25 @@
+# GitHub Actions Workflow for Automated Deployment
+
+# This is a starter workflow for deploying WordPress code or content changes.
+# You can expand this to trigger deployments, run AI scripts, or push to staging/live environments.
+
+name: Deploy to WordPress
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # Add steps here to run AI agents, build assets, or deploy to WordPress
+      # Example: Use FTP, SFTP, or WP-CLI to push changes to your IONOS WordPress site
+      # - name: Deploy via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@v4
+      #   with:
+      #     server: ${{ secrets.FTP_SERVER }}
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
